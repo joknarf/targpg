@@ -1,3 +1,5 @@
+[![bash](https://img.shields.io/badge/OS-Linux%20|%20macOS%20|%20SunOS%20...-blue.svg)]()
+
 # targpg
 tar command extended with gpg encryption/decryption with password-file
 
