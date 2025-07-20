@@ -9,7 +9,8 @@ case "$1" in
         exit 1
     ;;
 esac
+type gtar >/dev/null 2>&1 && tar=gtar || tar=tar
 
-tar "$@" -I $'bash -c \'gpg ${1:--c} --no-default-keyring --batch --passphrase-fd 3 --cipher-algo AES256\' _'
+$tar "$@" -I $'bash -c \'gpg ${1:--c} --no-default-keyring --batch --passphrase-fd 3 --cipher-algo AES256\' _'
 exec 3<&-
 
