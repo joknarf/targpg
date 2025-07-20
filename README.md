@@ -26,4 +26,6 @@ if no `-p` option as first argument, will be prompted for password if using tty
 $ targpg -p ~/.mypass cvf secrets.tgp --exclude=.git secrets
 $ targpg -p <(echo "$pass") cvf secrets.tgp --exclude=.git secrets 
 $ targpg -p <(echo "$pass") xvf secrets.tgp
+$ targpg xfv secrets.tgp
+Password:
 ```
