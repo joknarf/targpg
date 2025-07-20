@@ -2,7 +2,7 @@
 tar command extended with gpg encryption/decryption with password-file
 
 > * Unlike `gpgtar` or other tools, just use `targpg` exactly like `tar` with all features and standard options of tar.  
-> * `gpgtar` is just using tar -I options for `gpg` crypt/decrypt as a compression/decompression command.
+> * `gpgtar` is just using tar `-I` options for `gpg` crypt/decrypt as a compression/decompression command.
 > * The first option must be `-p <password-file>`
 
 ## pre-requisites
