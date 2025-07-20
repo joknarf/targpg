@@ -5,6 +5,12 @@ Unlike `gpgtar` or other tools, just use `targpg` exactly like `tar` with all fe
 `gpgtar` is just using tar -I options for `gpg` crypt/decrypt as a compression/decompression command.
 The only first option must be `-p <password-file>`
 
+## pre-requisites
+
+* bash
+* gnu tar
+* gpg
+
 ## usage
 
 ```
