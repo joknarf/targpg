@@ -22,7 +22,7 @@ targpg -p <password-file> <tar command options>
 ## examples
 
 ```
-$ targpg -p ~/.mypass cvf secrets.tgp secrets --exclude=.git
-$ targpg -p <(echo "$pass") cvf secrets.tgp secrets --exclude=.git
+$ targpg -p ~/.mypass cvf secrets.tgp --exclude=.git secrets
+$ targpg -p <(echo "$pass") cvf secrets.tgp --exclude=.git secrets 
 $ targpg -p <(echo "$pass") xvf secrets.tgp
 ```
