@@ -23,6 +23,6 @@ targpg -p <password-file> <tar command options>
 
 ```
 $ targpg -p ~/.mypass cvf secrets.tgp secrets --exclude=.git
-$ targpg -p <(echo $pass) cvf secrets.tgp secrets --exclude=.git
-$ targpg -p <(echo $pass) xvf secrets.tgp
+$ targpg -p <(echo "$pass") cvf secrets.tgp secrets --exclude=.git
+$ targpg -p <(echo "$pass") xvf secrets.tgp
 ```
