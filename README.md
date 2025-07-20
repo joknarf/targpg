@@ -16,8 +16,9 @@ tar command extended with gpg encryption/decryption with password-file
 ## usage
 
 ```
-targpg -p <password-file> <tar command options>
+targpg [-p <password-file>] <tar command options>
 ```
+if no `-p` option as first argument, will be prompted for password if using tty
 
 ## examples
 
