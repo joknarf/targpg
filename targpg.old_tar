@@ -1,0 +1,24 @@
+#!/bin/bash
+# encrypted tar with gpg
+# targ -p <(echo $pass) <taropts>
+case "$1" in
+    -p) exec 3<"$2"
+        shift 2
+    ;;
+    *)  [ -t ] && {
+            read -s -p "Password: " pass
+            echo ""
+            exec 3< <(echo "$pass")
+        } || exit 1
+    ;;
+esac
+# gnu tar version not supporting full command for --use-compress-program
+gpg=$(mktemp) || { echo "Error: Failed to create temporary file for gpg command" >&2; exit 1; }
+trap 'rm -f "$gpg"' EXIT
+echo 'gpg ${1:--c} --no-default-keyring --batch --passphrase-fd 3 --cipher-algo AES256' >"$gpg"
+chmod +x "$gpg"
+
+type gtar >/dev/null 2>&1 && tar=gtar || tar=tar
+$tar "$@" -I "$gpg"
+exec 3<&-
+
