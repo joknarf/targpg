@@ -7,6 +7,8 @@ tar command extended with gpg encryption/decryption with password-file
 > * `targpg` is just using `tar` `-I` options for `gpg` crypt/decrypt as a compression/decompression command.
 > * The first option must be `-p <password-file>`
 
+use targpg.old_tar if your tar command does not accept `-I <command>` but only `-I <prog>`
+
 ## pre-requisites
 
 * bash
